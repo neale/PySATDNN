@@ -52,7 +52,6 @@ Now that you have the required packages, we depend on the z3 solver for pysmt
 
 Now you're free to check out the source code, or run the test suite with `./start_all.sh`, which will loop over data with 2 to 32 dimensions, on training set sizes 100 to 100k
 
-=============================
 
 ## Issues
 If you get the error `NoSolverAvailable: No Solver is Available`, the do the following
