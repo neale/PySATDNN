@@ -1,0 +1,5 @@
+trials/
+runs/
+*.swn
+*.swo
+*.swp
