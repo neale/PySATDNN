@@ -6,7 +6,7 @@ This repository contains the source code for a tool that finds optimal weights f
 
 The training data is drawn from the unit-hypercube, and the labels are assigned to be binary. 
 
-We use PySMT with the Z3 solver to find both a CNF formula and a satisfying assignment for the model. 
+We use PySMT with the z3 solver to find both a CNF formula and a satisfying assignment for the model. 
 
 The tool records the following quantities using tensorboard:
 
@@ -24,15 +24,16 @@ The tool records the following quantities using tensorboard:
 * pytorch
 * pysmt -- with z3 solver
 * numpy
-* tensorborad
+* tensorboard
 * python3 
+* probably ubuntu
 
 ## Usage
 First clone the repository to the home directory (or anywhere you prefer)
 
 `git clone https://github.com/neale/pysatdnn . && cd pysatdnn`
 
-Its most helpful to instantiate a virtual environment, to avoid cluttering the system
+Its helpful to instantiate a virtual environment, to avoid cluttering the system
 
 `python 3 -m venv pysat_venv`
 
@@ -54,21 +55,15 @@ Now you're free to check out the source code, or run the test suite with `./star
 
 
 ## Issues
-If you get the error `NoSolverAvailable: No Solver is Available`, the do the following
+If you get the error `NoSolverAvailable: No Solver is Available`, then do the following:
 
-Run
+Run `pysmt-install --check`
 
-`pysmt-install --check`
+The output should show that z3 is installed as a solver. If not, then install as shown above. 
 
-the output should show that z3 is installed as a solver. If not, then install as shown above. 
+If it is shown as installed, then the PYTHONPATH is likely pointing somewhere else.
 
-If it is shown as installed, then the PYTHONPATH is likely pointing somewhere else
-
-Run
-
-`pysmt-install --env`
-
-to obtain a string that you can run to temporarily update the PYTHONPATH to the solvers location
+Run `pysmt-install --env` to obtain a string that you can run to temporarily update the PYTHONPATH to the solver's location
 
 
 
